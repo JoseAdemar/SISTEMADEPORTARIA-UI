@@ -1,8 +1,26 @@
-.navbar {
-    padding: 25px 0 34px;
+.navbar{
+    margin: 0px;
+    padding: 25px 0 20px;
     background-color: #1e94d2;
+    
   }
   
   .navbar-toggle {
     color: #fff;
   }
+
+  .ulMenu,li,a{
+     color: azure;
+     font-weight: bold;
+     font-size: 17px;
+     padding-inline: 0px 20px;
+     list-style-type: none;
+     display: inline;
+     text-decoration: none;
+     
+  }
+
+  .ulMenu,:hover{
+    color: black
+  
+ }
