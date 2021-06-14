@@ -4,11 +4,13 @@ import {PanelModule} from 'primeng/panel';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {CardModule} from 'primeng/card';
+import { FootComponent } from './foot/foot.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    FootComponent
   ],
   imports: [
     BrowserModule,
