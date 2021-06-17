@@ -5,6 +5,11 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {CardModule} from 'primeng/card';
 import { FootComponent } from './foot/foot.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -15,7 +20,8 @@ import { FootComponent } from './foot/foot.component';
   imports: [
     BrowserModule,
     PanelModule,
-    CardModule
+    CardModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

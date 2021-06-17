@@ -1,12 +1,14 @@
 .navbar{
   margin: 0px;
-  padding: 20px 0 4px;
-  background-color: #1e94d2;
+  padding: 22px 0 22px;
+}
 
+.bg-light {
+  background-color: #1e94d2!important;
 }
 
 .ulMenu,li,a{
-   color: azure;
+   color: rgb(255, 255, 255);
    font-weight: bold;
    font-size: 17px;
    padding-inline: 0px 20px;
@@ -20,3 +22,5 @@
   color: black
 
 }
+
+

@@ -3,5 +3,7 @@
     padding: 25px 0 20px;
     background-color: #515557;
     color: honeydew;
-
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
 }
