@@ -6,6 +6,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {CardModule} from 'primeng/card';
 import { FootComponent } from './foot/foot.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CadastroVisitanteComponent } from './cadastro-visitante/cadastro-visitante.component';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import {CalendarModule} from 'primeng/calendar';
 
 
 
@@ -15,13 +20,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     AppComponent,
     NavbarComponent,
-    FootComponent
+    FootComponent,
+    CadastroVisitanteComponent
   ],
   imports: [
     BrowserModule,
     PanelModule,
     CardModule,
-    NgbModule
+    NgbModule,
+    InputTextModule,
+    ButtonModule,
+    TableModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
