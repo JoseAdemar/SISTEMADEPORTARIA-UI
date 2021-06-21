@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CadastroVisitanteComponent {
 
   registros = [
-    { nome: 'Pedro Martins', cpf:'544219545', telefone: '85421585' },
+    { nome: 'Pedro Martins', cpf:'5442195', telefone: '8542158' },
     { nome: 'Maria Eloisa', cpf:'544219545', telefone: '85421585' },
     { nome: 'José Junior', cpf:'544219545', telefone: '85421585' }
   ];

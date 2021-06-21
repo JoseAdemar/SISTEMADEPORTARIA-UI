@@ -11,6 +11,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import {CalendarModule} from 'primeng/calendar';
+import {TooltipModule} from 'primeng/tooltip';
 
 
 
@@ -31,7 +32,8 @@ import {CalendarModule} from 'primeng/calendar';
     InputTextModule,
     ButtonModule,
     TableModule,
-    CalendarModule
+    CalendarModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
