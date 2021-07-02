@@ -12,9 +12,17 @@ import {ButtonModule} from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import {CalendarModule} from 'primeng/calendar';
 import {TooltipModule} from 'primeng/tooltip';
-
-
-
+import { RouterModule } from '@angular/router';
+import { CadastroVisitaComponent } from './cadastro-visita/cadastro-visita.component';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VisitanteService } from './servicos/visitante.service';
+import { VisitaService } from './servicos/visita.service';
+import {PaginatorModule} from 'primeng/paginator';
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 
 @NgModule({
@@ -22,7 +30,9 @@ import {TooltipModule} from 'primeng/tooltip';
     AppComponent,
     NavbarComponent,
     FootComponent,
-    CadastroVisitanteComponent
+    CadastroVisitanteComponent,
+    CadastroVisitaComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +43,24 @@ import {TooltipModule} from 'primeng/tooltip';
     ButtonModule,
     TableModule,
     CalendarModule,
-    TooltipModule
+    TooltipModule,
+    InputTextareaModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    PaginatorModule,
+    Ng2SearchPipeModule,
+
+    RouterModule.forRoot([
+
+      { path: '', component: HomeComponent},
+      { path: 'cadastro-visitante', component: CadastroVisitanteComponent},
+      { path: 'cadastro-visitante/:id', component: CadastroVisitanteComponent},
+      { path: 'cadastro-visita', component: CadastroVisitaComponent},
+      { path: 'cadastro-visita/:id', component: CadastroVisitaComponent}, 
+    ])
   ],
-  providers: [],
+  providers: [HttpClientModule, VisitanteService, VisitaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

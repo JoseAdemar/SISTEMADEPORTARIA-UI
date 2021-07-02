@@ -1,0 +1,83 @@
+<div class="container">
+
+    <br />
+    <h2>Tela cadastro de visita</h2>
+
+    <form>
+
+      <div class="p-grid">
+           <div class="p-col-7 p-fluid">
+                <label>Setor</label>
+                <input type="text" name="setor" [(ngModel)]="registro.setor" pInputText
+                [ngModelOptions]="{standalone: true}">
+           </div>
+
+            <div class="p-col-7 p-fluid">
+                <label>Observação</label>
+                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" name="exame"
+                 [(ngModel)]="registro.observacao" [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+
+
+            <div class="p-col-7 p-fluid">
+              <label>Código do Visitante</label>
+              <input type="text" name="visitante" [(ngModel)]="registro.visitante.id" pInputText
+              [ngModelOptions]="{standalone: true}">
+          </div>
+
+          <div class="p-col-12">
+            <button pButton type="button" (click)="cadastrar()" label="Cadastrar"></button>
+        </div>
+      </div>
+
+    </form>
+    <br/>
+
+    <div class="p-grid">
+
+          <div class="p-col-6 p-fluid">
+               <input type="text" pInputText>
+          </div>
+
+          <div class="p-col-5">
+               <button pButton type="button" label="Pesquisar"></button>
+          </div>
+    </div>
+
+    <div class="p-grid">
+      <div class="p-col-12">
+        <p-table [value]="visita" [responsive]="true" [paginator]="true" rows="1"  >
+          <ng-template pTemplate="header">
+            <tr>
+              <th class="col-data-header">Setor</th>
+              <th class="col-data-header">Observação</th>
+              <th class="col-valor-header">ID visitante</th>
+              <th class="col-valor-header">Visitante</th>
+              <th class="col-valor-header">VData</th>
+              <th class="col-data-header" style="align-content:center; width: 117px; "></th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body">
+              <tr *ngFor="let registro of visita">
+              <td class="col-data-content">{{ registro.setor }}</td>
+              <td class="col-data-content">{{ registro.observacao }}</td>
+              <td class="col-valor-content">{{ registro.visitante.id }}</td>
+              <td class="col-valor-content">{{ registro.visitante.nome }}</td>
+              <td class="col-valor-content">{{ registro.dataDaVisita }}</td>
+              <td>
+                <a pButton (click)="editar(registro.id)" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+                routerLink="/cadastro-os/{{registro.id}}"></a>&nbsp;
+
+               <button pButton (click)="remover(registro.id)" icon="pi pi-trash" pTooltip="Excluir"
+                tooltipPosition="top"></button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+
+
+
+</div>

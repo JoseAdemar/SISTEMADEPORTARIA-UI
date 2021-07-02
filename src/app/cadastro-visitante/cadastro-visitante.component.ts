@@ -1,15 +1,71 @@
 import { Component, OnInit } from '@angular/core';
+import { VisitanteModel } from '../models/visitante.model';
+import { VisitanteService } from '../servicos/visitante.service';
 
 @Component({
   selector: 'app-cadastro-visitante',
   templateUrl: './cadastro-visitante.component.html',
   styleUrls: ['./cadastro-visitante.component.css']
 })
-export class CadastroVisitanteComponent {
+export class CadastroVisitanteComponent implements OnInit {
 
-  registros = [
-    { nome: 'Pedro Martins', cpf:'5442195', telefone: '8542158' },
-    { nome: 'Maria Eloisa', cpf:'544219545', telefone: '85421585' },
-    { nome: 'José Junior', cpf:'544219545', telefone: '85421585' }
-  ];
+  p: VisitanteModel = new VisitanteModel();
+  visitantes: Array<any> = new Array();
+
+    constructor(private visitanteService: VisitanteService) {}
+
+  ngOnInit() {
+    this.listarVisitantes();
+  }
+
+  atualizar(id: number) {
+      this.visitanteService.atualizarVisitante(id, this.p).subscribe(data => {
+      this.p = new VisitanteModel();
+      this.listarVisitantes();
+
+    }, error => { console.log('Erro ao atualizar cadastro de visitante', error) })
+  }
+
+  editar(id: number) {
+    console.log(id);
+    // aqui voce precisa chamar o metodo que busca por id, pra preencher o objeto.
+    this.visitanteService.carregarVisitante(id, this.p).subscribe(data => {
+      this.p = data;
+      console.log(data);
+    });
+
 }
+
+
+  remover(id:number){
+      this.visitanteService.removerVisitante(id).subscribe(data => {
+      this.p = new VisitanteModel();
+      this.listarVisitantes();
+
+    }, error => { console.log('Erro ao remover cadastro de visitante', error) })
+  }
+
+
+
+  cadastrar() {
+    console.log(this.p);
+    this.visitanteService.cadastrarVisitante(this.p).subscribe(data => {
+         this.p = new VisitanteModel();
+         this.listarVisitantes();
+
+    }, error => { console.log('Erro ao cadastrar visitante', error) })
+  }
+
+  listarVisitantes() {
+    this.visitanteService.listarVisitantes().subscribe(data => {
+      this.visitantes = data;
+      console.log(data);
+
+    }, error => {
+      console.log('Erro ao listar os visitantes', error);
+    })
+  }
+
+
+
+  }
