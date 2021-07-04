@@ -8,12 +8,14 @@
       <div class="p-grid">
            <div class="p-col-5 p-fluid">
                 <label>Nome</label>
-                <input type="text" name="nome" [(ngModel)]="p.nome" pInputText [ngModelOptions]="{standalone: true}">
+                <input type="text" name="nome" [(ngModel)]="p.nome"
+                placeholder="nome" pInputText [ngModelOptions]="{standalone: true}">
            </div>
 
             <div class="p-col-2 p-fluid">
               <label>CPF</label>
-              <input type="text" name="cpf" [(ngModel)]="p.cpf" pInputText [ngModelOptions]="{standalone: true}">
+              <input type="text" name="cpf" [(ngModel)]="p.cpf"
+              placeholder="cpf" pInputText [ngModelOptions]="{standalone: true}">
             </div>
 
 
@@ -24,7 +26,7 @@
           </div>
 
           <div class="p-col-12">
-            <button pButton type="button" (click)="cadastrar() " label="Cadastrar"></button>
+            <button pButton type="button" (click)="cadastrar(); opensweetalert(); " label="Cadastrar"></button>
           </div>
       </div>
 
@@ -64,7 +66,7 @@
                 <a pButton (click)="editar(p.id)" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
                 routerLink="/cadastro-paciente/{{p.id}}"></a>&nbsp;
 
-              <button pButton (click)="remover(p.id)" icon="pi pi-trash" pTooltip="Excluir"
+              <button pButton (click)="remover(p.id); opensweetalertExcluir();" icon="pi pi-trash" pTooltip="Excluir"
                 tooltipPosition="top"></button>
               </td>
             </tr>

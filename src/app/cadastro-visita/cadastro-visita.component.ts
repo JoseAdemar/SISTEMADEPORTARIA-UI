@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VisitaModel } from '../models/visita.model';
 import { VisitanteModel } from '../models/visitante.model';
 import { VisitaService } from '../servicos/visita.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastro-visita',
@@ -68,14 +69,26 @@ export class CadastroVisitaComponent implements OnInit  {
 
 
 
+ //Metodo de alertas abaixo
+
+ opensweetalert(){
+  Swal.fire({
+    text: 'Cadastrado com sucesso',
+    icon: 'success'
+  })
+
+//fim do metodo de alertas
+}
+
+//inicio do alerta excluir
+opensweetalertExcluir(){
+  Swal.fire({
+    text: 'Excluído com sucesso',
+    icon: 'success'
+  })
+
+//fim do alerta excluir
+}}
 
 
- /*
-  registros = [
-    { nome: 'Pedro Martins',idade: '25', nascimento: '18/06/1990', telefone: '8542158' },
-    { nome: 'Pedro Martins',idade: '25', nascimento: '18/06/1990', telefone: '8542158' },
-    { nome: 'Pedro Martins',idade: '25', nascimento: '18/06/1990', telefone: '8542158' },
-  ];
-}
-*/
-}
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VisitanteModel } from '../models/visitante.model';
 import { VisitanteService } from '../servicos/visitante.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastro-visitante',
@@ -66,6 +67,25 @@ export class CadastroVisitanteComponent implements OnInit {
     })
   }
 
+  //Metodo de alertas abaixo
 
+  opensweetalert(){
+    Swal.fire({
+      text: 'Cadastrado com sucesso',
+      icon: 'success'
+    })
 
+  //fim do metodo de alertas
   }
+
+  //inicio do alerta excluir
+  opensweetalertExcluir(){
+    Swal.fire({
+      text: 'Excluído com sucesso',
+      icon: 'success'
+    })
+
+  //fim do alerta excluir
+  }}
+
+

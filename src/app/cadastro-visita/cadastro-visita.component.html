@@ -26,7 +26,7 @@
           </div>
 
           <div class="p-col-12">
-            <button pButton type="button" (click)="cadastrar()" label="Cadastrar"></button>
+            <button pButton type="button" (click)="cadastrar(); opensweetalert()" label="Cadastrar"></button>
         </div>
       </div>
 
@@ -68,7 +68,7 @@
                 <a pButton (click)="editar(registro.id)" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
                 routerLink="/cadastro-os/{{registro.id}}"></a>&nbsp;
 
-               <button pButton (click)="remover(registro.id)" icon="pi pi-trash" pTooltip="Excluir"
+               <button pButton (click)="remover(registro.id); opensweetalertExcluir()" icon="pi pi-trash" pTooltip="Excluir"
                 tooltipPosition="top"></button>
               </td>
             </tr>

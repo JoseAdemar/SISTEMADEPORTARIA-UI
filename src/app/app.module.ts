@@ -22,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VisitanteService } from './servicos/visitante.service';
 import { VisitaService } from './servicos/visita.service';
 import {PaginatorModule} from 'primeng/paginator';
-import { Ng2SearchPipeModule } from "ng2-search-filter";
+
+
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
     FootComponent,
     CadastroVisitanteComponent,
     CadastroVisitaComponent,
-    HomeComponent
+    HomeComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,7 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
     FormsModule,
     BrowserAnimationsModule,
     PaginatorModule,
-    Ng2SearchPipeModule,
+
 
     RouterModule.forRoot([
 
@@ -57,7 +59,7 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
       { path: 'cadastro-visitante', component: CadastroVisitanteComponent},
       { path: 'cadastro-visitante/:id', component: CadastroVisitanteComponent},
       { path: 'cadastro-visita', component: CadastroVisitaComponent},
-      { path: 'cadastro-visita/:id', component: CadastroVisitaComponent}, 
+      { path: 'cadastro-visita/:id', component: CadastroVisitaComponent},
     ])
   ],
   providers: [HttpClientModule, VisitanteService, VisitaService],
