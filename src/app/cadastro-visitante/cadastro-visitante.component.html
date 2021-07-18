@@ -1,79 +1,79 @@
 <div class="container">
 
-    <br />
-    <h2>Tela cadastro de visitante</h2>
+  <br />
+  <h2>Tela cadastro de visitante</h2>
 
-    <form>
-
-      <div class="p-grid">
-           <div class="p-col-5 p-fluid">
-                <label>Nome</label>
-                <input type="text" name="nome" [(ngModel)]="p.nome"
-                placeholder="nome" pInputText [ngModelOptions]="{standalone: true}">
-           </div>
-
-            <div class="p-col-2 p-fluid">
-              <label>CPF</label>
-              <input type="text" name="cpf" [(ngModel)]="p.cpf"
-              placeholder="cpf" pInputText [ngModelOptions]="{standalone: true}">
-            </div>
-
-
-            <div class="p-col-3 p-fluid">
-              <label>Telefone</label>
-                <input type="tel" [(ngModel)]="p.telefone" pInputText [ngModelOptions]="{standalone: true}"
-                placeholder="(61) 9999-9999" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})">
-          </div>
-
-          <div class="p-col-12">
-            <button pButton type="button" (click)="cadastrar(); opensweetalert(); " label="Cadastrar"></button>
-          </div>
-      </div>
-
-    </form>
-    <br/>
+  <form>
 
     <div class="p-grid">
+         <div class="p-col-5 p-fluid">
+              <label>Nome</label>
+              <input type="text" name="nome" [(ngModel)]="p.nome"
+              placeholder="nome" pInputText [ngModelOptions]="{standalone: true}">
+         </div>
 
-          <div class="p-col-5 p-fluid">
-               <input type="text" pInputText>
+          <div class="p-col-2 p-fluid">
+            <label>CPF</label>
+            <input type="text" name="cpf" [(ngModel)]="p.cpf"
+            placeholder="cpf" pInputText [ngModelOptions]="{standalone: true}">
           </div>
 
-          <div class="p-col-3">
-               <button pButton type="button" label="Pesquisar"></button>
-          </div>
+
+          <div class="p-col-3 p-fluid">
+            <label>Telefone</label>
+              <input type="tel" [(ngModel)]="p.telefone" pInputText [ngModelOptions]="{standalone: true}"
+              placeholder="(61) 9999-9999" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})">
+        </div>
+
+        <div class="p-col-12">
+          <button pButton type="button" (click)="cadastrar(); opensweetalert(); " label="Cadastrar"></button>
+        </div>
     </div>
 
-    <div class="p-grid">
-      <div class="p-col-12">
-        <p-table [value]="visitantes" [paginator]="true" rows="1" styleClass="p-datatable-striped">
-          <ng-template pTemplate="header">
-            <tr>
-              <th class="col-data-header">Código</th>
-              <th class="col-data-header">Nome</th>
-              <th class="col-data-header">CPF</th>
-              <th class="col-valor-header">Telefone</th>
-              <th class="col-data-header" style="align-content:center; width: 117px; "></th>
-            </tr>
-          </ng-template>
-          <ng-template pTemplate="body" let-registro>
-            <tr *ngFor="let p of visitantes">
-              <td class="col-data-content">{{ p.id }}</td>
-              <td class="col-data-content">{{ p.nome }}</td>
-              <td class="col-data-content">{{ p.cpf }}</td>
-              <td class="col-data-content">{{ p.telefone }}</td>
-              <td>
-                <a pButton (click)="editar(p.id)" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
-                routerLink="/cadastro-paciente/{{p.id}}"></a>&nbsp;
+  </form>
+  <br/>
 
-              <button pButton (click)="remover(p.id); opensweetalertExcluir();" icon="pi pi-trash" pTooltip="Excluir"
-                tooltipPosition="top"></button>
-              </td>
-            </tr>
-          </ng-template>
-        </p-table>
-      </div>
+  <div class="p-grid">
+
+        <div class="p-col-5 p-fluid">
+             <input type="text" pInputText>
+        </div>
+
+        <div class="p-col-3">
+             <button pButton type="button" label="Pesquisar"></button>
+        </div>
+  </div>
+
+  <div class="p-grid">
+    <div class="p-col-12">
+      <p-table [value]="visitantes" [paginator]="true" rows="1" styleClass="p-datatable-striped">
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="col-data-header">Código</th>
+            <th class="col-data-header">Nome</th>
+            <th class="col-data-header">CPF</th>
+            <th class="col-valor-header">Telefone</th>
+            <th class="col-data-header" style="align-content:center; width: 117px; "></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-registro>
+          <tr *ngFor="let p of visitantes">
+            <td class="col-data-content">{{ p.id }}</td>
+            <td class="col-data-content">{{ p.nome }}</td>
+            <td class="col-data-content">{{ p.cpf }}</td>
+            <td class="col-data-content">{{ p.telefone }}</td>
+            <td>
+              <a pButton (click)="editar(p.id)" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+              routerLink="/cadastro-paciente/{{p.id}}"></a>&nbsp;
+
+            <button pButton (click)="remover(p.id); opensweetalertExcluir();" icon="pi pi-trash" pTooltip="Excluir"
+              tooltipPosition="top"></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
+  </div>
 
 
 
