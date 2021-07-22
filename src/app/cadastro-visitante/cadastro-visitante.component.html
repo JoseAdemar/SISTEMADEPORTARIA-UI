@@ -49,6 +49,7 @@
       <p-table [value]="visitantes" [paginator]="true" rows="1" styleClass="p-datatable-striped">
         <ng-template pTemplate="header">
           <tr>
+            <th>{{visitantes[0] | keys}}</th>
             <th class="col-data-header">Código</th>
             <th class="col-data-header">Nome</th>
             <th class="col-data-header">CPF</th>

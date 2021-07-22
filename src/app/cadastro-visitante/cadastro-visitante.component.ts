@@ -61,6 +61,7 @@ export class CadastroVisitanteComponent implements OnInit {
     this.visitanteService.listarVisitantes().subscribe(data => {
       this.visitantes = data;
       console.log(data);
+      debugger
 
     }, error => {
       console.log('Erro ao listar os visitantes', error);
